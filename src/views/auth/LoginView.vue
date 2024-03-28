@@ -22,7 +22,7 @@
 
       <RouterLink to="/">
         <button
-          class="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-4"
+          class="bg-blue-400 text-white px-4 py-2 rounded-md hover:bg-blue-600 mt-6"
           type="submit"
         >
           Ingresar
