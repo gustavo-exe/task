@@ -1,15 +1,17 @@
 <template>
   <section class="flex justify-end pb-3 border-b border-gray-300">
-    <button
-      class="px-4 py-2 rounded-md mt-6 border border-blue-400 hover:border-blue-600 flex gap-1"
-    >
-      <Plus />
-      Nueva tarea
-    </button>
+    <RouterLink to="task/new">
+      <button
+        class="px-4 py-2 rounded-md mt-6 border border-blue-400 hover:border-blue-600 flex gap-1"
+      >
+        <Plus />
+        Nueva tarea
+      </button>
+    </RouterLink>
   </section>
 
   <div class="mt-4">
-    <article v-for="(task, index) in tasks" :key="index" class="shadow-sm rounded-xl p-4">
+    <article v-for="(task, index) in tasks.tasks" :key="index" class="shadow-sm rounded-xl p-4">
       <header class="flex justify-between gap-5">
         <h1 class="text-2xl mb-2">
           {{ task.title }}
@@ -36,6 +38,7 @@ import { Plus } from '@iconoir/vue'
 <script>
 import { mapState } from 'vuex'
 import { storeTask } from './Task.store'
+import { RouterLink } from 'vue-router'
 
 export default {
   computed: {
